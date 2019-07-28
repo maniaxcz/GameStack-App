@@ -1,0 +1,216 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><b>GameStack</b></h1>
+    <p class="lead text-muted">
+      <b><i>“Games give you a chance to excel, and if you're playing in good company you don't even mind if you lose because you had the enjoyment of the company during the course of the game.” </i></b>
+    </p>
+    <p>
+      <a
+        class="btn btn-primary"
+        *ngIf="!authService.loggedIn()"
+        [routerLink]="['/register']"
+        >REGISTER</a
+      >
+      <a
+        class="btn btn-dark"
+        *ngIf="!authService.loggedIn()"
+        [routerLink]="['/login']"
+        >LOGIN</a
+      >
+    </p>
+  </div>
+</section>
+<br />
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="pc">
+      <h2>PC Stack</h2>
+      <hr />
+      <div *ngIf="products">
+        <div class="row">
+          <div *ngFor="let product of pc" class="col-md-4 d-flex" >
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="{{ product.img }}"
+                alt="Card image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text"><strong>PRICE ₹{{ product.price}}</strong></p>
+                <p class="card-text">{{ product.description }}</p> 
+              </div>
+              <div class="card-footer">
+                <button
+                  type="button"
+                  *ngIf="!authService.loggedIn()"
+                  class="btn btn-dark btn-lg btn-block"
+                  [routerLink]="['/login']"
+                >
+                  Add To Cart
+                </button>
+                <div
+                  class="row"
+                  *ngIf="authService.loggedIn() && authService.userRole()"
+                >
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg btn-block"
+                      (click)="onEditProduct(product)"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-lg btn-block"
+                      (click)="onDeleteProduct(product)"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  *ngIf="authService.loggedIn() && !authService.userRole()"
+                  class="btn btn-dark btn-lg btn-block"
+                  (click)="onAddProductToCart(product)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="xbox">
+      <h2>XBox Stack</h2>
+      <hr />
+      <div *ngIf="products">
+        <div class="row ">
+          <div *ngFor="let product of xbox" class="col-md-4 d-flex">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="{{ product.img }}"
+                alt="Card image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text"><strong>PRICE ₹{{ product.price}}</strong></p>
+                <p class="card-text">{{ product.description }}</p>
+              </div>
+              <div class="card-footer">
+                <button
+                  type="button"
+                  *ngIf="!authService.loggedIn()"
+                  class="btn btn-dark btn-lg btn-block"
+                  [routerLink]="['/login']"
+                  >
+                  Add To Cart
+                </button>
+                <div
+                  class="row"
+                  *ngIf="authService.loggedIn() && authService.userRole()"
+                  >
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg btn-block"
+                      (click)="onEditProduct(product)"
+                     >
+                      Edit
+                    </button>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-lg btn-block"
+                      (click)="onDeleteProduct(product)"
+                      >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  *ngIf="authService.loggedIn() && !authService.userRole()"
+                  class="btn btn-dark btn-lg btn-block"
+                  (click)="onAddProductToCart(product)"
+                  >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accessories">
+      <h2>Accessories</h2>
+      <hr />
+      <div *ngIf="products">
+        <div class="row ">
+          <div *ngFor="let product of accessories" class="col-md-4 d-flex">
+            <div class="card mb-4 box-shadow ">
+              <img
+                class="card-img-top"
+                src="{{ product.img }}"
+                alt="Card image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text"><strong>PRICE ₹{{ product.price}}</strong></p>
+                <p class="card-text">{{ product.description }}</p>  
+              </div>
+              <div class="card-footer">
+                <button
+                  type="button"
+                  *ngIf="!authService.loggedIn()"
+                  class="btn btn-dark btn-lg btn-block"
+                  [routerLink]="['/login']"
+                >
+                  Add To Cart
+                </button>
+                <div
+                  class="row"
+                  *ngIf="authService.loggedIn() && authService.userRole()"
+                >
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg btn-block"
+                      (click)="onEditProduct(product)"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-lg btn-block"
+                      (click)="onDeleteProduct(product)"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  *ngIf="authService.loggedIn() && !authService.userRole()"
+                  class="btn btn-dark btn-lg btn-block"
+                  (click)="onAddProductToCart(product)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

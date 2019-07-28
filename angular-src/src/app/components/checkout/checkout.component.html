@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4 class="mb-3">Billing address</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" placeholder="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" placeholder="" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email
+            <span class="text-muted">(Optional)</span>
+          </label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" [(ngModel)]="Address" name="Address" placeholder="1234 Main St" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Address 2
+            <span class="text-muted">(Optional)</span>
+          </label>
+          <input type="text" class="form-control" id="address2" [(ngModel)]="address2" name="address2" placeholder="Apartment or suite">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="State">State</label>
+            <input type="text" class="form-control" [(ngModel)]="state" name="state" placeholder="" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="City">City</label>
+            <input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Pincode</label>
+            <input type="text" class="form-control" [(ngModel)]="zip" name="zip" placeholder="" required>
+          </div>
+        </div>
+        
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Payment</h4>
+        <h6>Cash on Delivery</h6>
+        
+        <button class="btn btn-primary btn-lg btn-block" type="button" (click)="orderPlaced()" style="margin-bottom: 25px; margin-top: 20px;">Continue to checkout</button>
+      </form>
+    </div>
+  </div>
+</div>

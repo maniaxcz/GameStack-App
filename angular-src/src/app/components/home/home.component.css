@@ -1,0 +1,16 @@
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.jumbotron {
+    background-image: url("../../../assets/images/jumbotron.jpg");
+    background-size: cover;
+  }
+.body {
+    background-image: url("..//..//..//assets/images/homebgimg.jpg");
+   }
+.sitename{
+     font-family: 'Courier New', Courier, monospace;
+     color: antiquewhite;
+}
+.lead{
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}

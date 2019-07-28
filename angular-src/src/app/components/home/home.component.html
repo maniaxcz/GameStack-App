@@ -1,0 +1,97 @@
+<body>
+  <div class="jumbotron text-center">
+   <h1 class="sitename">GameStack</h1>
+    <p class="lead">Welcome to the Ultimate Shop for Gamers</p>
+    <div>
+      <a
+        class="btn btn-primary"
+        *ngIf="!authService.loggedIn()"
+        [routerLink]="['/register']"
+        >Register</a
+      >
+      <a
+        class="btn btn-dark"
+        *ngIf="!authService.loggedIn()"
+        [routerLink]="['/login']"
+        >Login</a
+      >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3 align="center">PC Games</h3>
+      <div class="card mb-4 box-shadow">
+        <img
+          class="card-img-top"
+          src="../../../assets/images/pcgame.jpg"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Choose your favourite of all times from Team Play Games to the
+            Single Player.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <button
+              type="button"
+              class="btn btn-dark btn-lg btn-block"
+              [routerLink]="['/products']"
+            >
+              Shop PC Games
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 align="center">X-Box Games</h3>
+      <div class="card mb-4 box-shadow">
+        <img
+          class="card-img-top"
+          src="../../../assets/images/xbox.png"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Experience the new generation of games and entertainment with
+            <b>XBox</b>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <button
+              type="button"
+              class="btn btn-dark btn-lg btn-block"
+              [routerLink]="['/products']"
+            >
+              Shop XBOX Games
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 align="center">Gaming Accessories</h3>
+      <div class="card mb-4 box-shadow">
+        <img
+          class="card-img-top"
+          src="../../../assets/images/accessories.jpg"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Upgrade your skills! Go from Nobody to a Pro !
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <button
+              type="button"
+              class="btn btn-dark btn-lg btn-block"
+              [routerLink]="['/products']"
+            >
+              Shop Accessories
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
