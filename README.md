@@ -1,7 +1,9 @@
 TECHNOLOGY USED:  MEAN Stack
 
 •	Presentation Layer: Angular, which is a client-side JavaScript Framework.
+
 •	Service Layer: NodeJS, an open-source JavaScript run-time environment that executes JavaScript code outside of a browser.
+
 •	DAO Layer: Mongoose ORM (Object Relational Mapper), a MongoDB ODM for Node.
 
 
